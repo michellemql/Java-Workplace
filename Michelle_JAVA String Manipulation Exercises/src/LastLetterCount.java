@@ -2,16 +2,9 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
-/* h - xxx xxs xxxy xxy xxxx
- * xxxx yxx yxxx sxx xxx - h
- * 
- * 
- * */
 public class LastLetterCount {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		@SuppressWarnings("resource")
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Please enter the string: ");

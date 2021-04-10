@@ -15,7 +15,6 @@ public class Consonants {
 		}
 		int totalConsonants = countConsonants(userInput);
 		System.out.println("Total number of consonants in your sentence: " + totalConsonants); 
-
 	}
 	
 	public static int countConsonants(String str) {

@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class Words {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		@SuppressWarnings("resource")
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Please enter your sentence: ");
