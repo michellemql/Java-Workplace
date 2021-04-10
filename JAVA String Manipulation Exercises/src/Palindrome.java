@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Palindrome {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		@SuppressWarnings("resource")
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Please enter the word: ");
 		String userInput = myObj.nextLine();  
@@ -11,12 +13,13 @@ public class Palindrome {
 			userInput = myObj.nextLine(); 
 		}
 		boolean isPalindromic = isPalindrome(userInput);
-		System.out.println("Your word is " + userInput); 
 		String result = (isPalindromic == true) ? "is " : "is not ";
-		System.out.println("It " + result + "a palindromic word."); 
+		System.out.println("Your word " + result + "a palindromic word."); 
 	}
 	
 	public static boolean isPalindrome(String str) {
+		if (str == null || str.length() == 0) return true;
+		
 		String reversedStr = "";
 		for (int i = str.length() - 1; i >= 0; i--) {
 			reversedStr += str.charAt(i);
