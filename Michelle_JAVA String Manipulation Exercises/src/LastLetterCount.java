@@ -5,17 +5,16 @@ import java.util.Scanner;
 public class LastLetterCount {
 
 	public static void main(String[] args) {
-		@SuppressWarnings("resource")
-		Scanner myObj = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter the string: ");
-		String userInput = myObj.nextLine();
+		String userInput = scanner.nextLine();
 		while (userInput == null || userInput.length() == 0) {
 			System.out.println("Your input is empty. Please re-enter your string: ");
-			userInput = myObj.nextLine(); 
+			userInput = scanner.nextLine(); 
 		}
 		int total = countSpecialWords(userInput);
 		System.out.println("Total number of words that ends in 's' or 'y' is  " + total);
-
+		scanner.close();
 	}
 	
 	public static int countSpecialWords(String str) {

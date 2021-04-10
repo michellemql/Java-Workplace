@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class Words {
 
 	public static void main(String[] args) {
-		@SuppressWarnings("resource")
-		Scanner myObj = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter your sentence: ");
-		String userInput = myObj.nextLine();
+		String userInput = scanner.nextLine();
 		while (userInput == null || userInput.length() == 0) {
 			System.out.println("Your input is empty. Please re-enter your sentence: ");
-			userInput = myObj.nextLine(); 
+			userInput = scanner.nextLine(); 
 		}
 		int totalWords = countWords(userInput);
 		System.out.println("Total number of words in it: " + totalWords);
+		scanner.close();
 	}
 	
 	public static int countWords(String str) {

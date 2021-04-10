@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class Consonants {
 
-	public static void main(String[] args) {
-		@SuppressWarnings("resource")
-		Scanner myObj = new Scanner(System.in);
+	public static void main(String[] args) {		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter your sentence: ");
-		String userInput = myObj.nextLine();  
+		String userInput = scanner.nextLine();  
 		while (userInput == null || userInput.length() == 0) {
 			System.out.println("Your sentence is empty. Please enter your sentence again: ");
-			userInput = myObj.nextLine(); 
+			userInput = scanner.nextLine(); 
 		}
 		int totalConsonants = countConsonants(userInput);
-		System.out.println("Total number of consonants in your sentence: " + totalConsonants); 
+		System.out.println("Total number of consonants in your sentence is " + totalConsonants); 
+		scanner.close();
 	}
 	
 	public static int countConsonants(String str) {
