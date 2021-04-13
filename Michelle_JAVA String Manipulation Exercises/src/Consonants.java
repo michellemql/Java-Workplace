@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Consonants {
 
-	public static void main(String[] args) {		@SuppressWarnings("resource")
+	public static void main(String[] args) {		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter your sentence: ");
 		String userInput = scanner.nextLine();  
