@@ -1,6 +1,5 @@
 package com.Techbee.SeleniumTest;
 
-import java.awt.List;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,37 +10,30 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class EbayTest {
-
-	public EbayTest() {
-		// TODO Auto-generated constructor stub
-	}
+public class TargetText {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "/Users/michellemlq/Downloads/Tools/chromedriver");
-
-	    WebDriver ebayDriver = new ChromeDriver();
-	    ebayDriver.get("http://www.ebay.com/");
+		
+	    WebDriver targetDriver = new ChromeDriver();
+	    targetDriver.get("http://www.target.com/");
 	    
-	    // Search for "iphone" in the search bar
-	    // Click on search button
-	    // Output product description and price for all products displayed on page 1 and save it in a text file
-	  
-	    ebayDriver.findElement(By.id("gh-ac")).sendKeys("iPhone");
-	    ebayDriver.findElement(By.xpath("//*[@id=\"gh-btn\"]")).click();
+	    WebElement searchInput = targetDriver.findElement(By.id("search"));
+	    targetDriver.findElement(By.id("search")).sendKeys("iPhone");
+	    targetDriver.findElement(By.xpath("//*[@id=\"headerMain\"]/div[1]/button")).click();
 	    
-	    WebElement webElement = ebayDriver.findElement(By.xpath(" //*[@id=\"srp-river-results\"]/ul"));
+	    WebElement webElement = targetDriver.findElement(By.xpath("//*[@id=\"mainContainer\"]/div[4]/div[2]/div/div[1]/div[3]/div/ul"));
 	    ArrayList<WebElement> allIPhones = (ArrayList<WebElement>) webElement.findElement(By.tagName("li"));
-	    ArrayList<ArrayList<String>> res = new ArrayList<>(); 
+	    ArrayList<ArrayList<String>> res = new ArrayList<>();
 	    
 	    int count = allIPhones.size();
-	    File file1 = new File("iphone_ebay.txt");
-	    FileWriter fw = new FileWriter(file1);
+	    File file2 = new File("iphone_target.txt");
+	    FileWriter fw = new FileWriter(file2);
 	    
 	    for (int i = 0; i < count; i++) {
 	    	ArrayList<String> item = new ArrayList<>();
-	    	String description = allIPhones.get(i).findElement(By.className("s-item__title")).getText();
+	    	String description = allIPhones.get(i).findElement(By.cssSelector("h-display-flex")).getText();
 	    	String price = allIPhones.get(i).findElement(By.xpath("//*[@id=\"srp-river-results\"]/ul/li[1]/div/div[2]/div[5]/div[1]/span")).getText();
 	    	String text = description + "-" + price;
 	    	item.add(text);
@@ -49,11 +41,6 @@ public class EbayTest {
 	    	fw.write(text);
 	    }
 	    
-   
 	    System.out.println(res);
-	    
-    
-
 	}
-
 }
