@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class RegistrationPage {
 
-	public static Scanner scanner = new Scanner(System.in);
+	public static Scanner scanner;
 	public static UserProfileDAO userRegister = new UserProfileDAO();
 	
 	public static void main(String[] args) {	
@@ -29,6 +29,7 @@ public class RegistrationPage {
 	}
 	
 	public static void doTask() {
+		scanner = new Scanner(System.in);
 		System.out.println("How can I help you? (Please select one: Add a user, Update a user, Delete a user, Display a user, Display all users)");
 		String input = scanner.nextLine();
 		String action = input.toLowerCase();
