@@ -36,11 +36,13 @@ public class TestEbayLogin {
 		String loginPageTitle = objLogin.getLoginTitle();
 		Assert.assertEquals("Hello", loginPageTitle);
 		// Login to application
-		objLogin.loginToEbay("test123@gmail.com", "mgr!23");
+		objLogin.loginToEbay("test123", "mgr!23");
 		// Go the next page
 		objHomePage = new EbayHomePage(driver);
 		// Verify home page
+		String homePageUserName = objHomePage.getHomePageDashboardUserName();
 		String homePageTitle = objLogin.getHomeTitle();
+		Assert.assertEquals("test123", homePageUserName);
 		Assert.assertEquals("https://www.ebay.com/", homePageTitle);
 	}
 
