@@ -53,11 +53,6 @@ public class EbayLoginPage {
 		return driver.findElement(loginTitle).getText();
 	}
 	
-	//Get the title of Home Page
-	public String getHomeTitle() {
-		return driver.findElement(homeTitle).getAttribute("href");
-	}
-	
 	public void loginToEbay(String strUserName, String strPassword) {
 		//Fill user name
 		this.setUserName(strUserName);
@@ -65,7 +60,7 @@ public class EbayLoginPage {
 		this.clickContinue();
 		//Fill password
 		this.setPassword(strPassword);
-		//Click Login button
+		//Click login button
 		this.clickLogin();
 	}
 }

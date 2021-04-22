@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.Select;
 public class EbayHomePage {
 	WebDriver driver;
 	By homePageUserName = By.xpath("//*[@id=\"gh-ug\"]/b[1]");
+	By homeTitle = By.xpath("//*[@id=\"gh-la\"]");
+	
 	
 	public EbayHomePage(WebDriver driver) {
 		this.driver = driver;
@@ -24,5 +26,8 @@ public class EbayHomePage {
 	public String getHomePageDashboardUserName() {
 		return driver.findElement(homePageUserName).getText();
 	}
-
+	
+	public String getHomeTitle() {
+		return driver.findElement(homeTitle).getAttribute("href");
+	}
 }

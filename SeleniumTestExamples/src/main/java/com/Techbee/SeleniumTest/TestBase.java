@@ -7,8 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testing.annotations.BeforeSuite;
-import org.testing.annotations.AfterSuite;
+
 
 public class TestBase {
 	public static WebDriver driver = null;
