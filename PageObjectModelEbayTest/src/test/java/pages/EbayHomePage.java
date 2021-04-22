@@ -4,12 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class EbayHomePage {
@@ -20,6 +22,7 @@ public class EbayHomePage {
 	
 	public EbayHomePage(WebDriver driver) {
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 	
 	//Get the User name from Home page
@@ -27,7 +30,9 @@ public class EbayHomePage {
 		return driver.findElement(homePageUserName).getText();
 	}
 	
+	//Get the Home page title
 	public String getHomeTitle() {
 		return driver.findElement(homeTitle).getAttribute("href");
 	}
+	
 }

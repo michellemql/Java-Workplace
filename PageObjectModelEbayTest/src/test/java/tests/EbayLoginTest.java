@@ -21,8 +21,8 @@ public class EbayLoginTest extends TestBase{
 	public EbayLoginTest() throws IOException {
 		super.setup();
 		objLogin = new EbayLoginPage(driver);
-		// direct to login page
-		super.clickLoginLink();
+		// Direct to login page
+		super.clickLink("Sign in");
 		
 		// Verify login page title
 		String loginPageTitle = objLogin.getLoginTitle();

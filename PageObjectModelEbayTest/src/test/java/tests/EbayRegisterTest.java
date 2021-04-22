@@ -20,7 +20,7 @@ public class EbayRegisterTest extends TestBase {
 		super.setup();
 		objRegister = new EbayRegisterPage(driver);
 		// Direct to registration page
-		super.clickRegisterLink();
+		super.clickLink("register");
 		
 		//verify register page title
 		String registerPageTitle = objRegister.getRegisterTitle();
